@@ -11,6 +11,10 @@
 		BB24496A2C209B7A00087F99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2449692C209B7A00087F99 /* ContentView.swift */; };
 		BB24496C2C209B7C00087F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB24496B2C209B7C00087F99 /* Assets.xcassets */; };
 		BB24496F2C209B7C00087F99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB24496E2C209B7C00087F99 /* Preview Assets.xcassets */; };
+		BB2449762C209B8B00087F99 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2449752C209B8300087F99 /* Renderer.swift */; };
+		BB2449782C20B82800087F99 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = BB2449772C20B82800087F99 /* Shaders.metal */; };
+		BB24497A2C20BAD000087F99 /* PipelineBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2449792C20BACA00087F99 /* PipelineBuilder.swift */; };
+		BB24497D2C20C12500087F99 /* MeshFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24497C2C20C12000087F99 /* MeshFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		BB2449692C209B7A00087F99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB24496B2C209B7C00087F99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB24496E2C209B7C00087F99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BB2449752C209B8300087F99 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		BB2449772C20B82800087F99 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		BB2449792C20BACA00087F99 /* PipelineBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineBuilder.swift; sourceTree = "<group>"; };
+		BB24497B2C20BFC800087F99 /* definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = definitions.h; sourceTree = "<group>"; };
+		BB24497C2C20C12000087F99 /* MeshFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +60,15 @@
 		BB2449662C209B7A00087F99 /* OnMetal */ = {
 			isa = PBXGroup;
 			children = (
+				BB24497C2C20C12000087F99 /* MeshFactory.swift */,
+				BB2449752C209B8300087F99 /* Renderer.swift */,
 				BB2449672C209B7A00087F99 /* OnMetalApp.swift */,
 				BB2449692C209B7A00087F99 /* ContentView.swift */,
 				BB24496B2C209B7C00087F99 /* Assets.xcassets */,
 				BB24496D2C209B7C00087F99 /* Preview Content */,
+				BB2449772C20B82800087F99 /* Shaders.metal */,
+				BB2449792C20BACA00087F99 /* PipelineBuilder.swift */,
+				BB24497B2C20BFC800087F99 /* definitions.h */,
 			);
 			path = OnMetal;
 			sourceTree = "<group>";
@@ -137,8 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2449782C20B82800087F99 /* Shaders.metal in Sources */,
+				BB24497D2C20C12500087F99 /* MeshFactory.swift in Sources */,
 				BB24496A2C209B7A00087F99 /* ContentView.swift in Sources */,
+				BB2449762C209B8B00087F99 /* Renderer.swift in Sources */,
 				BB2449682C209B7A00087F99 /* OnMetalApp.swift in Sources */,
+				BB24497A2C20BAD000087F99 /* PipelineBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +306,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JoshuaCastillo.OnMetal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_OBJC_BRIDGING_HEADER = OnMetal/definitions.h;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -317,7 +336,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JoshuaCastillo.OnMetal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_OBJC_BRIDGING_HEADER = OnMetal/definitions.h;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
